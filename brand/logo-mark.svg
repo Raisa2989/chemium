@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 48 48" fill="none">
+  <!-- ХимиУм · фирменный знак: бензольное кольцо с атомным ядром -->
+  <!-- Версия для светлого фона -->
+  <path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z"
+        stroke="#059669" stroke-width="3.5" stroke-linejoin="round"/>
+  <circle cx="24" cy="23" r="6.5" fill="#059669"/>
+  <circle cx="33.5" cy="17.5" r="2.4" fill="#059669" opacity="0.55"/>
+  <circle cx="14.5" cy="29.5" r="2" fill="#059669" opacity="0.45"/>
+</svg>

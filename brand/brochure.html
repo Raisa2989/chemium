@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ХимиУм — бренд-брошюра</title>
+<style>
+  :root {
+    --em: #059669;
+    --em-deep: #047857;
+    --em-light: #10B981;
+    --teal: #0D9488;
+    --amber: #F59E0B;
+    --orange: #F97316;
+    --violet: #8B5CF6;
+    --beige: #F4EEDD;
+    --beige-2: #EDE5CE;
+    --ink: #1D2B27;
+    --ink-soft: #55645E;
+    --card: #FFFFFF;
+    --line: #E2D9C3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Manrope', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--beige);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 40px 64px;
+  }
+
+  /* ── Титул ── */
+  .cover {
+    background: linear-gradient(135deg, rgba(16,185,129,.10), #FFFFFF 45%, rgba(245,158,11,.08));
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 56px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover .dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(5,150,105,.16) 1px, transparent 0);
+    background-size: 26px 26px;
+  }
+  .cover > * { position: relative; }
+  .cover h1 { font-size: 56px; font-weight: 800; letter-spacing: .5px; margin: 18px 0 6px; }
+  .cover h1 em { font-style: normal; color: var(--em); }
+  .cover .slogan { color: var(--ink-soft); font-size: 19px; font-weight: 600; }
+  .cover .badge {
+    display: inline-block; margin-top: 22px;
+    background: #fff; border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 18px; font-size: 13px; font-weight: 700; color: var(--ink-soft);
+  }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 13px; margin: 26px 0 44px; letter-spacing: .3px; }
+
+  /* ── Секции ── */
+  section { margin-bottom: 44px; }
+  h2 {
+    font-size: 22px; font-weight: 800; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .num {
+    width: 30px; height: 30px; border-radius: 9px; background: var(--em); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px; flex: none;
+  }
+  p.lead { color: var(--ink-soft); font-size: 15.5px; }
+
+  /* аббревиатура */
+  .acronym {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px; margin-top: 18px;
+  }
+  .acr-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 12px; text-align: center;
+  }
+  .acr-card .letter {
+    width: 44px; height: 44px; margin: 0 auto 8px; border-radius: 13px;
+    background: linear-gradient(135deg, var(--em-light), var(--em-deep));
+    color: #fff; font-size: 22px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .acr-card .word { font-weight: 800; font-size: 14.5px; }
+  .acr-card .hint { font-size: 11.5px; color: var(--ink-soft); margin-top: 2px; }
+
+  /* цифры */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px; text-align: center;
+  }
+  .stat b { display: block; font-size: 30px; font-weight: 800; color: var(--em); letter-spacing: -0.5px; }
+  .stat span { font-size: 12px; color: var(--ink-soft); }
+
+  /* палитра */
+  .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+  .swatch { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+  .swatch .chip { height: 64px; }
+  .swatch .meta { padding: 10px 14px; }
+  .swatch .meta b { font-size: 13.5px; display: block; }
+  .swatch .meta code { font-size: 12px; color: var(--ink-soft); font-family: 'JetBrains Mono', Consolas, monospace; }
+
+  /* логотипы */
+  .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
+  .logo-slot {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 150px; justify-content: center;
+  }
+  .logo-slot.dark { background: #12211C; border-color: #1E332C; }
+  .logo-slot .caption { font-size: 11.5px; color: var(--ink-soft); text-align: center; }
+  .logo-slot.dark .caption { color: #9DB4AB; }
+
+  /* правила */
+  ul.rules { margin-top: 12px; padding-left: 0; list-style: none; }
+  ul.rules li {
+    padding: 10px 14px 10px 40px; margin-bottom: 8px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 12px; font-size: 14px; color: var(--ink-soft);
+    position: relative;
+  }
+  ul.rules li::before {
+    content: '✓'; position: absolute; left: 14px; top: 10px;
+    color: var(--em); font-weight: 800;
+  }
+  ul.rules li.bad::before { content: '✕'; color: #DC2626; }
+
+  /* аудитория */
+  .audience { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+  .aud {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px;
+  }
+  .aud b { display: block; margin-bottom: 4px; font-size: 14.5px; }
+  .aud span { font-size: 13px; color: var(--ink-soft); }
+
+  /* код для встраивания */
+  .embed {
+    background: #12211C; color: #D7E7DF; border-radius: 16px; padding: 20px;
+    font-family: 'JetBrains Mono', Consolas, monospace; font-size: 12.5px;
+    overflow-x: auto; white-space: pre; line-height: 1.6; margin-top: 14px;
+  }
+  .embed .c { color: #6F8A7F; }
+  .embed .t { color: #6EE7B7; }
+
+  /* футер брошюры */
+  .brochure-footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;
+    color: var(--ink-soft); font-size: 12.5px;
+  }
+  .brochure-footer a { color: var(--em); font-weight: 800; text-decoration: none; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+  .type-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px;
+  }
+  .type-card .demo-main { font-size: 26px; font-weight: 800; }
+  .type-card .demo-sub { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+
+  @media print {
+    .page { padding: 0; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ ТИТУЛ ═══ -->
+  <div class="cover">
+    <div class="dots"></div>
+    <svg width="96" height="96" viewBox="0 0 48 48" fill="none" aria-label="Знак ХимиУм">
+      <path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z" stroke="#059669" stroke-width="3.5" stroke-linejoin="round"/>
+      <circle cx="24" cy="23" r="6.5" fill="#059669"/>
+      <circle cx="33.5" cy="17.5" r="2.4" fill="#059669" opacity="0.55"/>
+      <circle cx="14.5" cy="29.5" r="2" fill="#059669" opacity="0.45"/>
+    </svg>
+    <h1>Хими<em>Ум</em></h1>
+    <div class="slogan">Химия — понятно и с тренировкой</div>
+    <div class="badge">бренд-брошюра приложения · v1.0</div>
+  </div>
+  <div class="subtitle">Учебник-тренажёр школьного курса химии · 8–11 классы · PWA</div>
+
+  <!-- ═══ 1. АББРЕВИАТУРА ═══ -->
+  <section>
+    <h2><span class="num">1</span> Имя и аббревиатура</h2>
+    <p class="lead">
+      Название образовано слиянием слов <b>«химия»</b> и <b>«ум»</b>: ХимиУм — «химия умом»,
+      учиться понимая, а не зубря. Латинское написание для доменов и логинов: <b>khimium</b>.
+    </p>
+    <div class="acronym">
+      <div class="acr-card"><div class="letter">Х</div><div class="word">Химия</div><div class="hint">предмет и наука</div></div>
+      <div class="acr-card"><div class="letter">И</div><div class="word">Интерактивно</div><div class="hint">тренажёр вместо конспекта</div></div>
+      <div class="acr-card"><div class="letter">М</div><div class="word">Методично</div><div class="hint">по рабочим программам</div></div>
+      <div class="acr-card"><div class="letter">И</div><div class="word">Интегрировано</div><div class="hint">теория + практика + справочник</div></div>
+      <div class="acr-card"><div class="letter">У</div><div class="word">Уровнево</div><div class="hint">базовый и углублённый</div></div>
+      <div class="acr-card"><div class="letter">М</div><div class="word">Мастерство</div><div class="hint">цель — уверенные знания</div></div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. ЧТО ЭТО ═══ -->
+  <section>
+    <h2><span class="num">2</span> Что это за продукт</h2>
+    <p class="lead">
+      ХимиУм — полноценный учебник-тренажёр <b>всей школьной программы химии</b> (8–11 классы)
+      в виде веб-приложения. Внутри: структурированная теория с формулами и уравнениями,
+      тренажёр с подробным разбором ошибок, интерактивная периодическая таблица, справочник,
+      прогресс и достижения. Приложение устанавливается на телефон или компьютер (PWA)
+      и <b>работает без интернета</b>.
+    </p>
+    <div class="stats">
+      <div class="stat"><b>75</b><span>тем теории</span></div>
+      <div class="stat"><b>752</b><span>вопроса с разбором</span></div>
+      <div class="stat"><b>2</b><span>этапа: 8–9 и 10–11 классы</span></div>
+      <div class="stat"><b>2</b><span>уровня: базовый / углублённый</span></div>
+      <div class="stat"><b>0</b><span>₽ — без подписки, офлайн</span></div>
+    </div>
+    <div class="audience" style="margin-top:14px">
+      <div class="aud"><b>Ученики 8–11 классов</b><span>готовка к ОГЭ и ЕГЭ, выравнивание знаний, профильные классы</span></div>
+      <div class="aud"><b>Учителя и репетиторы</b><span>готовая система заданий с разбором, домашняя практика</span></div>
+      <div class="aud"><b>Родители</b><span>понятный прогресс и вовлечённость ребёнка без контроля «из-за спины»</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. ЛОГОТИП ═══ -->
+  <section>
+    <h2><span class="num">3</span> Фирменный знак и логотип</h2>
+    <p class="lead">
+      Знак — <b>бензольное кольцо с атомным ядром и электронами</b>: шесть вершин-атомов
+      соединены связями, в центре — ядро. Символ одновременно «химический» (шестиугольник
+      бензола — самый узнаваемый образ химии) и «образовательный» (ядро знаний, вокруг
+      которого выстраивается понимание). Знак читается уже в 24&nbsp;px.
+    </p>
+    <div class="logo-grid">
+      <div class="logo-slot">
+        <svg width="88" height="88" viewBox="0 0 48 48" fill="none">
+          <path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z" stroke="#059669" stroke-width="3.5" stroke-linejoin="round"/>
+          <circle cx="24" cy="23" r="6.5" fill="#059669"/>
+          <circle cx="33.5" cy="17.5" r="2.4" fill="#059669" opacity="0.55"/>
+          <circle cx="14.5" cy="29.5" r="2" fill="#059669" opacity="0.45"/>
+        </svg>
+        <div class="caption">logo-mark.svg<br>основной знак · светлый фон</div>
+      </div>
+      <div class="logo-slot dark">
+        <svg width="88" height="88" viewBox="0 0 48 48" fill="none">
+          <path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z" stroke="#34d399" stroke-width="3.5" stroke-linejoin="round"/>
+          <circle cx="24" cy="23" r="6.5" fill="#34d399"/>
+          <circle cx="33.5" cy="17.5" r="2.4" fill="#34d399" opacity="0.55"/>
+          <circle cx="14.5" cy="29.5" r="2" fill="#34d399" opacity="0.45"/>
+        </svg>
+        <div class="caption">logo-mark-white.svg<br>инверсия · тёмный фон</div>
+      </div>
+      <div class="logo-slot">
+        <svg width="200" height="58" viewBox="0 0 280 80" fill="none">
+          <g transform="translate(4, 16) scale(1)">
+            <path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z" stroke="#059669" stroke-width="3.5" stroke-linejoin="round"/>
+            <circle cx="24" cy="23" r="6.5" fill="#059669"/>
+            <circle cx="33.5" cy="17.5" r="2.4" fill="#059669" opacity="0.55"/>
+            <circle cx="14.5" cy="29.5" r="2" fill="#059669" opacity="0.45"/>
+          </g>
+          <text x="58" y="46" font-family="Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="0.5" fill="#1D2B27">Хими<tspan fill="#059669">Ум</tspan></text>
+          <text x="59" y="62" font-family="Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="0.4" fill="#6B7A75">химия — понятно и с тренировкой</text>
+        </svg>
+        <div class="caption">logo-full.svg<br>горизонтальный логотип</div>
+      </div>
+      <div class="logo-slot">
+        <svg width="88" height="88" viewBox="0 0 512 512" fill="none">
+          <defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#047857"/>
+          </linearGradient></defs>
+          <rect width="512" height="512" rx="112" fill="url(#ig)"/>
+          <path d="M256 112 L363 174 L363 298 L256 360 L149 298 L149 174 Z" fill="none" stroke="#ffffff" stroke-width="30" stroke-linejoin="round"/>
+          <circle cx="256" cy="236" r="42" fill="#ffffff"/>
+          <circle cx="356" cy="186" r="18" fill="#ffffff" opacity="0.6"/>
+          <circle cx="156" cy="286" r="14" fill="#ffffff" opacity="0.45"/>
+        </svg>
+        <div class="caption">app-icon.svg / .png<br>иконка приложения (PWA)</div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:14px">
+      Горизонтальный промо-баннер 1200×400 для витрины или лендинга — в файле <b>banner.svg</b>.
+      Охранное поле знака — не меньше ½ высоты знака с каждой стороны.
+    </p>
+  </section>
+
+  <!-- ═══ 4. ЦВЕТА ═══ -->
+  <section>
+    <h2><span class="num">4</span> Фирменные цвета</h2>
+    <p class="lead">
+      Основа — <b>изумрудный</b> (наука, точность, рост) на <b>тёплом бежевом</b> фоне
+      (бумага учебника, комфорт для глаз). Дополнительные цвета кодируют этапы и уровни курса.
+    </p>
+    <div class="palette">
+      <div class="swatch"><div class="chip" style="background:#059669"></div><div class="meta"><b>Изумруд</b><code>#059669 · основной</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#047857"></div><div class="meta"><b>Изумруд глубокий</b><code>#047857 · градиенты</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F4EEDD"></div><div class="meta"><b>Беж</b><code>#F4EEDD · фон (светл.)</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#0D9488"></div><div class="meta"><b>Бирюза</b><code>#0D9488 · 9 класс</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#F59E0B"></div><div class="meta"><b>Янтарь</b><code>#F59E0B · этап 10–11, ЕГЭ</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#8B5CF6"></div><div class="meta"><b>Фиолет</b><code>#8B5CF6 · углубл. уровень</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1D2B27"></div><div class="meta"><b>Графит</b><code>#1D2B27 · текст</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#12211C"></div><div class="meta"><b>Ночь</b><code>#12211C · фон (тёмн.)</code></div></div>
+    </div>
+    <p class="lead" style="margin-top:12px">
+      Семантика в интерфейсе: 8–9 классы — <span style="color:#059669;font-weight:700">изумруд/бирюза</span>,
+      10–11 классы — <span style="color:#F59E0B;font-weight:700">янтарь</span>,
+      углублённый уровень — <span style="color:#8B5CF6;font-weight:700">фиолетовый</span>.
+    </p>
+  </section>
+
+  <!-- ═══ 5. ТИПОГРАФИКА И ГОЛОС ═══ -->
+  <section>
+    <h2><span class="num">5</span> Типографика и тон</h2>
+    <div class="two-col">
+      <div class="type-card">
+        <div class="demo-main">Manrope</div>
+        <div class="demo-sub">основной шрифт: заголовки 800, текст 400–600<br>фолбэк: Segoe UI, Arial</div>
+      </div>
+      <div class="type-card">
+        <div class="demo-main" style="font-family:Consolas,monospace">JetBrains Mono</div>
+        <div class="demo-sub">формулы, код и цифры<br>нижние индексы — 0.72em</div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:14px">
+      <b>Голос бренда</b> — «умный друг-репетитор»: дружелюбно, без снисходительности;
+      коротко и по делу; всегда объясняет «почему», а не только «что».
+      Обращение — на «вы». Канцелярит и паника («срочно!!! вы не сдадите») исключены.
+    </p>
+  </section>
+
+  <!-- ═══ 6. ПРАВИЛА ═══ -->
+  <section>
+    <h2><span class="num">6</span> Правила использования</h2>
+    <ul class="rules">
+      <li>Знак используется целиком: не обрезать, не поворачивать, не менять пропорции</li>
+      <li>Цвет знака — изумруд #059669 (на светлом) или мятный #34D399 (на тёмном); допускается белый на фирменном фоне</li>
+      <li>Охранное поле вокруг знака — минимум ½ его высоты; минимальный размер — 24&nbsp;px</li>
+      <li>Надпись «ХимиУм» — слитно, «Ум» выделено цветом; не разделять на «Хими Ум»</li>
+      <li class="bad">Нельзя: менять шестиугольник на другие фигуры, добавлять тени/градиенты к знаку, ставить знак на пёстрый фон без плашки</li>
+      <li class="bad">Нельзя использовать бренд в материалах, дискредитирующих школьное образование</li>
+      <li>При встраивании в каталоги/витрины указывайте: «ХимиУм · учебник-тренажёр по химии 8–11» и ссылку на источник</li>
+    </ul>
+  </section>
+
+  <!-- ═══ 7. ВСТРАИВАНИЕ ═══ -->
+  <section>
+    <h2><span class="num">7</span> Карточка для встраивания на сайт</h2>
+    <p class="lead">
+      Готовый HTML-сниппет для портфолио или каталога проектов. Скопируйте и замените
+      <span style="font-family:Consolas,monospace">https://ВАШ-ДОМЕН</span> на адрес приложения.
+    </p>
+<div class="embed"><span class="c">&lt;!-- ХимиУм · карточка проекта --&gt;</span>
+&lt;a href="https://ВАШ-ДОМЕН" style="display:flex;gap:16px;align-items:center;
+   text-decoration:none;max-width:520px;padding:20px;border-radius:18px;
+   border:1px solid #E2D9C3;background:linear-gradient(135deg,#F4EEDD,#fff);
+   font-family:'Segoe UI',Arial,sans-serif;color:#1D2B27"&gt;
+  &lt;svg width="56" height="56" viewBox="0 0 48 48" fill="none"&gt;
+    &lt;path d="M24 5 L39.5 14 L39.5 32 L24 41 L8.5 32 L8.5 14 Z"
+          stroke="#059669" stroke-width="3.5" stroke-linejoin="round"/&gt;
+    &lt;circle cx="24" cy="23" r="6.5" fill="#059669"/&gt;
+    &lt;circle cx="33.5" cy="17.5" r="2.4" fill="#059669" opacity="0.55"/&gt;
+    &lt;circle cx="14.5" cy="29.5" r="2" fill="#059669" opacity="0.45"/&gt;
+  &lt;/svg&gt;
+  &lt;span&gt;
+    &lt;b style="font-size:18px"&gt;Хими&lt;span style="color:#059669"&gt;Ум&lt;/span&gt;&lt;/b&gt;&lt;br/&gt;
+    &lt;span style="font-size:13px;color:#55645E"&gt;
+      Учебник-тренажёр школьной химии · 75 тем · 752 вопроса&lt;br/&gt;
+      8–11 классы · базовый и углублённый уровни · офлайн
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</div>
+  </section>
+
+  <!-- ═══ ФУТЕР ═══ -->
+  <div class="brochure-footer">
+    <div>
+      ХимиУм · бренд-брошюра v1.0 · файлы: <b>logo-mark.svg · logo-full.svg · banner.svg · app-icon.svg</b>
+    </div>
+    <div>
+      Разработка — <a href="https://ds-analytics.ru/">DSA · Data Source Analytics</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

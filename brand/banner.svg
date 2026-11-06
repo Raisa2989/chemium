@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 600 200" fill="none">
+  <!-- ХимиУм · промо-баннер 1200×400 для встраивания на сайт -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4EEDD"/>
+      <stop offset="1" stop-color="#EAF3EC"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="200" rx="24" fill="url(#bg)"/>
+
+  <!-- точечный паттерн -->
+  <g fill="#059669" opacity="0.12">
+    <circle cx="30" cy="26" r="1.4"/><circle cx="70" cy="26" r="1.4"/><circle cx="110" cy="26" r="1.4"/><circle cx="150" cy="26" r="1.4"/><circle cx="190" cy="26" r="1.4"/><circle cx="230" cy="26" r="1.4"/><circle cx="270" cy="26" r="1.4"/><circle cx="310" cy="26" r="1.4"/><circle cx="350" cy="26" r="1.4"/><circle cx="390" cy="26" r="1.4"/><circle cx="430" cy="26" r="1.4"/><circle cx="470" cy="26" r="1.4"/><circle cx="510" cy="26" r="1.4"/><circle cx="550" cy="26" r="1.4"/><circle cx="590" cy="26" r="1.4"/>
+    <circle cx="30" cy="60" r="1.4"/><circle cx="70" cy="60" r="1.4"/><circle cx="110" cy="60" r="1.4"/><circle cx="150" cy="60" r="1.4"/><circle cx="190" cy="60" r="1.4"/><circle cx="230" cy="60" r="1.4"/><circle cx="270" cy="60" r="1.4"/><circle cx="310" cy="60" r="1.4"/><circle cx="350" cy="60" r="1.4"/><circle cx="390" cy="60" r="1.4"/><circle cx="430" cy="60" r="1.4"/><circle cx="470" cy="60" r="1.4"/><circle cx="510" cy="60" r="1.4"/><circle cx="550" cy="60" r="1.4"/><circle cx="590" cy="60" r="1.4"/>
+    <circle cx="30" cy="94" r="1.4"/><circle cx="70" cy="94" r="1.4"/><circle cx="110" cy="94" r="1.4"/><circle cx="150" cy="94" r="1.4"/><circle cx="190" cy="94" r="1.4"/><circle cx="230" cy="94" r="1.4"/><circle cx="270" cy="94" r="1.4"/><circle cx="310" cy="94" r="1.4"/><circle cx="350" cy="94" r="1.4"/><circle cx="390" cy="94" r="1.4"/><circle cx="430" cy="94" r="1.4"/><circle cx="470" cy="94" r="1.4"/><circle cx="510" cy="94" r="1.4"/><circle cx="550" cy="94" r="1.4"/><circle cx="590" cy="94" r="1.4"/>
+    <circle cx="30" cy="128" r="1.4"/><circle cx="70" cy="128" r="1.4"/><circle cx="110" cy="128" r="1.4"/><circle cx="150" cy="128" r="1.4"/><circle cx="190" cy="128" r="1.4"/><circle cx="230" cy="128" r="1.4"/><circle cx="270" cy="128" r="1.4"/><circle cx="310" cy="128" r="1.4"/><circle cx="350" cy="128" r="1.4"/><circle cx="390" cy="128" r="1.4"/><circle cx="430" cy="128" r="1.4"/><circle cx="470" cy="128" r="1.4"/><circle cx="510" cy="128" r="1.4"/><circle cx="550" cy="128" r="1.4"/><circle cx="590" cy="128" r="1.4"/>
+    <circle cx="30" cy="162" r="1.4"/><circle cx="70" cy="162" r="1.4"/><circle cx="110" cy="162" r="1.4"/><circle cx="150" cy="162" r="1.4"/><circle cx="190" cy="162" r="1.4"/><circle cx="230" cy="162" r="1.4"/><circle cx="270" cy="162" r="1.4"/><circle cx="310" cy="162" r="1.4"/><circle cx="350" cy="162" r="1.4"/><circle cx="390" cy="162" r="1.4"/><circle cx="430" cy="162" r="1.4"/><circle cx="470" cy="162" r="1.4"/><circle cx="510" cy="162" r="1.4"/><circle cx="550" cy="162" r="1.4"/><circle cx="590" cy="162" r="1.4"/>
+  </g>
+
+  <!-- знак -->
+  <g transform="translate(40, 52)">
+    <path d="M48 10 L79 28 L79 64 L48 82 L17 64 L17 28 Z"
+          stroke="url(#em)" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="48" cy="46" r="13" fill="url(#em)"/>
+    <circle cx="67" cy="35" r="4.8" fill="url(#em)" opacity="0.55"/>
+    <circle cx="29" cy="59" r="4" fill="url(#em)" opacity="0.45"/>
+  </g>
+
+  <!-- текст -->
+  <text x="140" y="86" font-family="'Manrope','Segoe UI',Arial,sans-serif"
+        font-size="42" font-weight="800" letter-spacing="0.5" fill="#1D2B27">
+    Хими<tspan fill="#059669">Ум</tspan>
+  </text>
+  <text x="142" y="110" font-family="'Manrope','Segoe UI',Arial,sans-serif"
+        font-size="15" font-weight="600" fill="#5C6B66">
+    учебник-тренажёр школьного курса химии · 8–11 классы
+  </text>
+
+  <!-- факты -->
+  <g font-family="'Manrope','Segoe UI',Arial,sans-serif" font-weight="700">
+    <rect x="140" y="126" width="86" height="34" rx="10" fill="#FFFFFF" stroke="#DCE5DF"/>
+    <text x="183" y="148" font-size="14" fill="#059669" text-anchor="middle">75 тем</text>
+    <rect x="234" y="126" width="96" height="34" rx="10" fill="#FFFFFF" stroke="#DCE5DF"/>
+    <text x="282" y="148" font-size="14" fill="#059669" text-anchor="middle">752 вопроса</text>
+    <rect x="338" y="126" width="130" height="34" rx="10" fill="#FFFFFF" stroke="#DCE5DF"/>
+    <text x="403" y="148" font-size="14" fill="#8B5CF6" text-anchor="middle">2 уровня · офлайн</text>
+  </g>
+
+  <!-- молекула справа -->
+  <g stroke="#059669" opacity="0.25" stroke-width="2.4" fill="none" stroke-linejoin="round">
+    <path d="M520 60 L544 74 L544 102 L520 116 L496 102 L496 74 Z"/>
+    <circle cx="520" cy="88" r="9"/>
+    <circle cx="544" cy="74" r="5"/>
+    <circle cx="496" cy="102" r="4"/>
+    <path d="M544 88 L566 88" stroke-linecap="round"/>
+    <circle cx="572" cy="88" r="6"/>
+  </g>
+</svg>
